@@ -1,36 +1,38 @@
-<mat-form-field>
-  <mat-label>Tipo do veículo</mat-label>
-  <mat-select>
-    <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-    @for (item of vehicleTypes; track $index) {
-      <mat-option [value]="item.code">{{ item.name }}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Marca</mat-label>
-  <mat-select>
-    <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-    @for (item of vehicleTypes; track $index) {
-      <mat-option [value]="item.code">{{ item.name }}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Modelo</mat-label>
-  <mat-select>
-    <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-    @for (item of vehicleTypes; track $index) {
-      <mat-option [value]="item.code">{{ item.name }}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Ano</mat-label>
-  <mat-select>
-    <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-    @for (item of vehicleTypes; track $index) {
-      <mat-option [value]="item.code">{{ item.name }}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
+<form class="fipe-form" [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Tipo do veículo</mat-label>
+    <mat-select formControlName="vehicleType">
+      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
+      @for (item of vehicleTypes; track $index) {
+        <mat-option [value]="item.code">{{ item.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Marca</mat-label>
+    <mat-select formControlName="brandId">
+      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
+      @for (item of vehicleTypes; track $index) {
+        <mat-option [value]="item.code">{{ item.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Modelo</mat-label>
+    <mat-select formControlName="modelId">
+      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
+      @for (item of vehicleTypes; track $index) {
+        <mat-option [value]="item.code">{{ item.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Ano</mat-label>
+    <mat-select formControlName="yearId">
+      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
+      @for (item of vehicleTypes; track $index) {
+        <mat-option [value]="item.code">{{ item.name }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</form>
