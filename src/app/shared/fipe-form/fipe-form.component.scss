@@ -1,0 +1,13 @@
+@import '@mixins';
+
+:host {
+  display: flex;
+  column-gap: 16px;
+  width: 100%;
+  height: min-content;
+
+  mat-form-field {
+    //@include full-width;
+    flex: 1;
+  }
+}

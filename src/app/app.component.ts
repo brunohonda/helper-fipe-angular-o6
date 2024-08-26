@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FipeFormComponent } from "./shared/fipe-form/fipe-form.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    FipeFormComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
