@@ -2,7 +2,7 @@
   <mat-form-field>
     <mat-label>Tipo do veículo</mat-label>
     <mat-select formControlName="vehicleType">
-      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
+      <mat-option [value]="formModel.vehicleType[0]">-- Selecione uma opção --</mat-option>
       @for (item of vehicleTypes; track $index) {
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
@@ -11,8 +11,8 @@
   <mat-form-field>
     <mat-label>Marca</mat-label>
     <mat-select formControlName="brandId">
-      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-      @for (item of vehicleTypes; track $index) {
+      <mat-option [value]="formModel.brandId[0]">-- Selecione uma opção --</mat-option>
+      @for (item of brands$ | async; track $index) {
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
     </mat-select>
@@ -20,8 +20,8 @@
   <mat-form-field>
     <mat-label>Modelo</mat-label>
     <mat-select formControlName="modelId">
-      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-      @for (item of vehicleTypes; track $index) {
+      <mat-option [value]="formModel.modelId[0]">-- Selecione uma opção --</mat-option>
+      @for (item of models$ | async; track $index) {
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
     </mat-select>
@@ -29,8 +29,8 @@
   <mat-form-field>
     <mat-label>Ano</mat-label>
     <mat-select formControlName="yearId">
-      <mat-option [value]="null">-- Selecione uma opção --</mat-option>
-      @for (item of vehicleTypes; track $index) {
+      <mat-option [value]="formModel.yearId[0]">-- Selecione uma opção --</mat-option>
+      @for (item of years$ | async; track $index) {
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
     </mat-select>
