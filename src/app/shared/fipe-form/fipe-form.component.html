@@ -16,6 +16,9 @@
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
     </mat-select>
+    @if (brandsLoading()) {
+      <mat-spinner matSuffix [diameter]="25"></mat-spinner>
+    }
   </mat-form-field>
   <mat-form-field>
     <mat-label>Modelo</mat-label>
@@ -25,6 +28,9 @@
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
     </mat-select>
+    @if (modelsLoading()) {
+      <mat-spinner matSuffix [diameter]="25"></mat-spinner>
+    }
   </mat-form-field>
   <mat-form-field>
     <mat-label>Ano</mat-label>
@@ -34,5 +40,8 @@
         <mat-option [value]="item.code">{{ item.name }}</mat-option>
       }
     </mat-select>
+    @if (yearsLoading()) {
+      <mat-spinner matSuffix [diameter]="25"></mat-spinner>
+    }
   </mat-form-field>
 </form>

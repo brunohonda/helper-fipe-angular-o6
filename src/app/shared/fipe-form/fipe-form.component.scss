@@ -9,5 +9,9 @@
   mat-form-field {
     //@include full-width;
     flex: 1;
+
+    mat-spinner {
+      margin: 0 4px;
+    }
   }
 }

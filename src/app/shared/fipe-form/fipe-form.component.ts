@@ -1,16 +1,16 @@
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
-import { FipeFormValue } from './../interfaces/fipe-form-value';
-import { FipeFormModel } from './../models/fipe-form.model';
-import { FipeService } from './../services/fipe.service';
-
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { vehicleTypes } from '../constants/vehicle-types';
 import { SelectOption } from '../interfaces/select-option';
+import { FipeFormValue } from './../interfaces/fipe-form-value';
+import { FipeFormModel } from './../models/fipe-form.model';
+import { FipeService } from './../services/fipe.service';
 
 @Component({
   selector: 'app-fipe-form',
@@ -22,6 +22,7 @@ import { SelectOption } from '../interfaces/select-option';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './fipe-form.component.html',
   styleUrl: './fipe-form.component.scss'
@@ -34,8 +35,11 @@ export class FipeFormComponent implements OnInit {
   public form = this.formBuilder.group(this.formModel);
   public vehicleTypes: SelectOption[] = vehicleTypes;
   public brands$: Observable<SelectOption[]> = this.fipeService.brands$;
+  public brandsLoading = this.fipeService.brandsLoading;
   public models$: Observable<SelectOption[]> = this.fipeService.models$;
+  public modelsLoading = this.fipeService.modelsLoading;
   public years$: Observable<SelectOption[]> = this.fipeService.years$;
+  public yearsLoading = this.fipeService.yearsLoading;
 
   constructor(
     protected readonly formBuilder: FormBuilder,
