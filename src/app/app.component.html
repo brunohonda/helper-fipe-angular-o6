@@ -1,2 +1,8 @@
 <app-fipe-form></app-fipe-form>
-<pre>{{ vehicle$ | async | json }}</pre>
+@if (vehicle$ | async; as vehicle) {
+  <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
+} @else if(vehicleLoading()) {
+  <mat-spinner></mat-spinner>
+} @else {
+  <p>Nenhuma informação</p>
+}

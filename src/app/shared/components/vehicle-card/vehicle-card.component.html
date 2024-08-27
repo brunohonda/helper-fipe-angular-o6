@@ -1,0 +1,17 @@
+<mat-card class="vehicle-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>{{ vehicle.brand }}</mat-card-title>
+      <mat-card-subtitle>{{ vehicle.model }}</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content class="vehicle-card-content">
+    <p class="vehicle-card__price">{{ vehicle.price }}</p>
+  </mat-card-content>
+  <mat-card-footer class="vehicle-card-footer">
+    <mat-chip-set>
+      <mat-chip>{{ vehicle.modelYear }}</mat-chip>
+      <mat-chip>{{ vehicle.fuel }}</mat-chip>
+    </mat-chip-set>
+  </mat-card-footer>
+</mat-card>

@@ -1,5 +1,7 @@
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { VehicleCardComponent } from "./shared/components/vehicle-card/vehicle-card.component";
 import { FipeFormComponent } from "./shared/fipe-form/fipe-form.component";
 import { FipeService } from './shared/services/fipe.service';
 
@@ -8,14 +10,16 @@ import { FipeService } from './shared/services/fipe.service';
   standalone: true,
   imports: [
     AsyncPipe,
-    JsonPipe,
+    MatProgressSpinnerModule,
     FipeFormComponent,
-  ],
+    VehicleCardComponent,
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   vehicle$ = this.fipeService.vehicle$;
+  vehicleLoading = this.fipeService.vehicleLoading;
 
   constructor(
     protected readonly fipeService: FipeService

@@ -1,5 +1,5 @@
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -17,7 +17,6 @@ import { FipeService } from './../services/fipe.service';
   standalone: true,
   imports: [
     AsyncPipe,
-    JsonPipe,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -25,7 +24,8 @@ import { FipeService } from './../services/fipe.service';
     MatProgressSpinnerModule,
   ],
   templateUrl: './fipe-form.component.html',
-  styleUrl: './fipe-form.component.scss'
+  styleUrl: './fipe-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FipeFormComponent implements OnInit {
   @Output() submit = new EventEmitter<FipeFormValue>();
