@@ -2,6 +2,7 @@
   <mat-card-header>
     <mat-card-title-group>
       <mat-card-title>{{ vehicle.brand }}</mat-card-title>
+      <span>{{ vehicle.codeFipe }}</span>
       <mat-card-subtitle>{{ vehicle.model }}</mat-card-subtitle>
     </mat-card-title-group>
   </mat-card-header>
@@ -11,7 +12,9 @@
   <mat-card-footer class="vehicle-card-footer">
     <mat-chip-set>
       <mat-chip>{{ vehicle.modelYear }}</mat-chip>
-      <mat-chip>{{ vehicle.fuel }}</mat-chip>
+      <mat-chip>{{ vehicle.referenceMonth }}</mat-chip>
+      <mat-chip>{{ vehicle.fuel }} ({{ vehicle.fuelAcronym }})</mat-chip>
+      <mat-chip>{{ vehicle.vehicleType | vehicleType }}</mat-chip>
     </mat-chip-set>
   </mat-card-footer>
 </mat-card>

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { VehicleTypePipe } from '../../pipes/vehicle-type.pipe';
 import { Vehicle } from './../../interfaces/vehicle';
 
 @Component({
@@ -9,6 +10,7 @@ import { Vehicle } from './../../interfaces/vehicle';
   imports: [
     MatCardModule,
     MatChipsModule,
+    VehicleTypePipe
   ],
   templateUrl: './vehicle-card.component.html',
   styleUrl: './vehicle-card.component.scss',
