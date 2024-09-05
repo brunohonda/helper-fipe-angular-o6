@@ -6,7 +6,6 @@ export interface Vehicle {
   model:          string;
   modelYear:      number;
   price:          string;
-  priceHistory:   PriceHistory[];
   referenceMonth: string;
   vehicleType:    number;
 }
