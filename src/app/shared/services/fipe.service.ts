@@ -9,6 +9,7 @@ import { Vehicle } from './../interfaces/vehicle';
   providedIn: 'root'
 })
 export class FipeService {
+  private readonly _apiHost = 'https://localhost:7273'
   private _brands$ = new BehaviorSubject<SelectOption[]>([]);
   private _brandsLoading = signal(false);
   public brands$ = this._brands$.asObservable();
@@ -36,7 +37,7 @@ export class FipeService {
   getBrands(vehicleType: string): void {
     this._brandsLoading.set(true);
     this.http
-      .get<SelectOption[]>(`https://fipe.parallelum.com.br/api/v2/${ vehicleType }/brands`)
+      .get<SelectOption[]>(`${ this._apiHost }/Brands/${ vehicleType }/brands`)
       .pipe(
         take(1),
         finalize(() => this._brandsLoading.set(false)),
@@ -47,7 +48,7 @@ export class FipeService {
   getModels(vehicleType: string, brandId: string): void {
     this._modelsLoading.set(true);
     this.http
-      .get<SelectOption[]>(`https://fipe.parallelum.com.br/api/v2/${ vehicleType }/brands/${ brandId }/models`)
+      .get<SelectOption[]>(`${ this._apiHost }/VehicleModels/${ vehicleType }/brands/${ brandId }/models`)
       .pipe(
         take(1),
         finalize(() => this._modelsLoading.set(false)),
@@ -57,7 +58,7 @@ export class FipeService {
   getYears(vehicleType: string, brandId: any, modelId: string): void {
     this._yearsLoading.set(true);
     this.http
-      .get<SelectOption[]>(`https://fipe.parallelum.com.br/api/v2/${ vehicleType }/brands/${ brandId }/models/${ modelId }/years`)
+      .get<SelectOption[]>(`${ this._apiHost }/Years/${ vehicleType }/brands/${ brandId }/models/${ modelId }/years`)
       .pipe(
         take(1),
         finalize(() => this._yearsLoading.set(false)),
@@ -69,7 +70,7 @@ export class FipeService {
 
     this._vehicleLoading.set(true);
     this.http
-      .get<Vehicle>(`https://fipe.parallelum.com.br/api/v2/${ vehicleType }/brands/${ brandId }/models/${ modelId }/years/${ yearId }`)
+      .get<Vehicle>(`${ this._apiHost }/FipeInfo/${ vehicleType }/brands/${ brandId }/models/${ modelId }/years/${ yearId }`)
       .pipe(
         take(1),
         finalize(() => this._vehicleLoading.set(false)),
