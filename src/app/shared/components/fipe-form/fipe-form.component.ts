@@ -6,11 +6,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { Observable } from 'rxjs';
-import { vehicleTypes } from '../constants/vehicle-types';
-import { SelectOption } from '../interfaces/select-option';
-import { FipeFormValue } from './../interfaces/fipe-form-value';
-import { FipeFormModel } from './../models/fipe-form.model';
-import { FipeService } from './../services/fipe.service';
+import { vehicleTypes } from '../../constants/vehicle-types';
+import { FipeFormValue } from '../../interfaces/fipe-form-value';
+import { SelectOption } from '../../interfaces/select-option';
+import { FipeFormModel } from '../../models/fipe-form.model';
+import { FipeService } from '../../services/fipe.service';
 
 @Component({
   selector: 'app-fipe-form',

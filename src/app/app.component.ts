@@ -1,8 +1,8 @@
 import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FipeFormComponent } from "./shared/components/fipe-form/fipe-form.component";
 import { VehicleCardComponent } from "./shared/components/vehicle-card/vehicle-card.component";
-import { FipeFormComponent } from "./shared/fipe-form/fipe-form.component";
 import { FipeService } from './shared/services/fipe.service';
 
 @Component({
